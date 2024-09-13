@@ -6,11 +6,140 @@
     box-sizing: border-box;
 }
 body{
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-direction: column;
+    background-color:#ffcc8e;
 }
 canvas{
     border: 1px solid black;
+    background-color: white;
+}
+header{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 10px;
+    padding: 20px;
+}
+
+.botao {
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: monaco, Consolas, Lucida Console, monospace;
+    font-size: 20px;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+                7px 7px 20px 0px rgba(0,0,0,.1),
+                4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+
+.botao {
+    background: #FFA12B;
+    background: linear-gradient(0deg, #faad4d 0%,#FFA12B 100%);
+    line-height: 42px;
+    padding: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border: none;
+}
+
+.botao span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Borda animada */
+.botao:before, .botao:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    background: rgba(255, 161, 43, 0.8);
+    transition: all 0.3s ease;
+}
+
+.botao:before {
+    height: 0%;
+    width: 2px;
+}
+
+.botao:after {
+    width: 0%;
+    height: 2px;
+}
+
+.botao:hover {
+    background: transparent;
+    box-shadow: none;
+}
+
+.botao:hover:before {
+    height: 100%;
+}
+
+.botao:hover:after {
+    width: 100%;
+}
+
+.botao span:hover {
+    color: #FFA12B;
+}
+
+.botao span:before, .botao span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: rgba(255, 161, 43, 0.8);
+    transition: all 0.3s ease;
+}
+
+.botao span:before {
+    width: 2px;
+    height: 0%;
+}
+
+.botao span:after {
+    width: 0%;
+    height: 2px;
+}
+
+.botao span:hover:before {
+    height: 100%;
+}
+
+.botao span:hover:after {
+    width: 100%;
+}
+
+/* Classe que mantém o botão selecionado */
+.botao.selecionado, .botao.selecionado:before, .botao.selecionado:after {
+    background: transparent;
+    color: #FFA12B;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.botao.selecionado span {
+    color: #FFA12B;
+}
+
+.botao.selecionado span:before, .botao.selecionado span:after {
+    height: 100%;
+    width: 100%;
 }
