@@ -1,5 +1,5 @@
 import {desenharLinhaEquacaoReta, desenharLinhaParametrica, desenharLinhaBresenham} from './retas.js'
-import {desenharCirculoEquacao, desenharCircunfereciaParametrica, desenharCircunferencia} from './circunferencia.js'
+import {desenharCirculoEquacao, desenharCircunfereciaParametrica, desenharCircunferencia, desenharCircunferenciaBresenham} from './circunferencia.js'
 // Array usado para armazenar as coordenadas iniciais e finais
 let coordenadas = [];
 let ctx;
@@ -35,18 +35,33 @@ function iniciarDesenho(event){
 function finalizarDesenho(event, botaoSelecionado){
     coordenadas.push(event.offsetX);
     coordenadas.push(event.offsetY);
+    // Equacao da reta
     if(botaoSelecionado == 2){
         desenharLinhaEquacaoReta(coordenadas);
-    } else if (botaoSelecionado == 3){
+    } 
+    // Equacao parametrica da reta
+    else if (botaoSelecionado == 3){
         desenharLinhaParametrica(coordenadas);
-    } else if(botaoSelecionado == 4){
+    } 
+    // Desenho da reta pelo metodo de Bresenham
+    else if(botaoSelecionado == 4){
         desenharLinhaBresenham(coordenadas);
-    } else if(botaoSelecionado == 5){
+    } 
+    // Equação da circunferência
+    else if(botaoSelecionado == 5){
         desenharCirculoEquacao(coordenadas);
-    } else if(botaoSelecionado == 6){
+    } 
+    // Equação paramétrica da circunferência
+    else if(botaoSelecionado == 6){
         desenharCircunfereciaParametrica(coordenadas);
-    } else if(botaoSelecionado == 7){
+    } 
+    // Circunferência ?????????
+    else if(botaoSelecionado == 7){
         desenharCircunferencia(coordenadas);
+    } 
+    // Desenho da circunferência por Bresenham
+    else if(botaoSelecionado == 8){
+        desenharCircunferenciaBresenham(coordenadas);
     }
 }
 
