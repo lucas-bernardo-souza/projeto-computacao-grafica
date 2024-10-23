@@ -25,6 +25,9 @@ botoes.forEach(function(botao) {
 
 function atualizaBotao(botao){
     botaoSelecionado = botao.id;
+    // Abre a aplicação de conversor de cores
+    if(botaoSelecionado == 1)
+        window.open('conversor/index.html', '_blank');
 }
 // Adicionando função a um botão usando Arrow Function
 botaoApagar.addEventListener('click', () => {
